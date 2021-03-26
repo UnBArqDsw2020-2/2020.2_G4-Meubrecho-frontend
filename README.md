@@ -1,63 +1,22 @@
-# RepositorioTemplate
-Esse repositório é para ser utilizado pelos grupos como um template inicial, da home page do Projeto.
-Demais diretrizes sobre a organização da wiki constam no Moodle Aprender 3.
-
-**!! Atenção: Renomeie o seu repositório para (Ano.Semestre)_(Grupo)_(NomeDoProjeto)*. !!** 
-
-**!! *Não coloque os nomes dos alunos no título do repositório*. !!**
-
-**!! *Exemplo de título correto: 2020.1_G1_ProjetoPandora*. !!** 
- 
- (Apague essa seção)
-
-# Nome do Projeto
+# Meu Brechó
 
 **Código da Disciplina**: FGA0208<br>
-**Número do Grupo**: XX<br>
+**Número do Grupo**: 04<br>
 
 ## Alunos
 |Matrícula | Aluno |
 | -- | -- |
-| xx/xxxxxx  |  xxxx xxxx xxxxx |
-| xx/xxxxxx  |  xxxx xxxx xxxxx |
+| 17/0016838  |  Lucas Lopes Xavier |
+| 14/0155350  |  Matheus Filipe |
+| 15/0142536  |  Murilo Schiler |
+| 18/0054554  |  Paulo Batista |
+| 17/0115208  |  Victor Levi Peixoto |
 
 ## Sobre 
-Descreva o seu projeto em linhas gerais. 
+Desenvolvimento de uma Aplicação Web sobre um brechó online , com funcionalidades como compra e venda de artigos de vestiário , além de filtros de busca. 
 
-## Screenshots Primeira Entrega <<FOCO: DSW(Base)>>
-Adicione 2 ou mais screenshots do projeto em termos de artefatos da Primeira Entrega.
+## Como rodar
 
-## Vídeo(s) Primeira Entrega <<FOCO: DSW(Base)>>
-Adicione o(s)s vídeo(s) da Primeira Entrega.
+Para poder rodar é necessário ter o [docker compose](https://docs.docker.com/compose/install/) assim como o [docker](https://docs.docker.com/engine/install/).
 
-## Screenshots Segunda Entrega <<FOCO: DSW(Modelagem)>>
-Adicione 2 ou mais screenshots do projeto em termos de artefatos da Segunda Entrega.
-
-## Vídeo(s) Segunda Entrega <<FOCO: DSW(Modelagem)>>
-Adicione o(s)s vídeo(s) da Segunda Entrega.
-
-## Screenshots Terceira Entrega <<FOCO: DSW(Padrões de Projeto)>>
-Adicione 2 ou mais screenshots do projeto em termos de artefatos da Terceira Entrega.
-
-## Vídeo(s) Terceira Entrega <<FOCO: DSW(Padrões de Projeto)>>
-Adicione o(s)s vídeo(s) da Terceira Entrega.
-
-## Screenshots Quarta Entrega (FINAL) <<FOCOS: Arquitetura & Reutilização de Software & PROJETO FINAL>>
-Adicione 2 ou mais screenshots do projeto em termos de interface e/ou funcionamento.
-
-## Vídeo(s) Quarta Entrega (FINAL) <<FOCOS: Arquitetura & Reutilização de Software & PROJETO FINAL>>
-Adicione o(s)s vídeo(s) da Entrega Final.
-
-## Descritivo dos Principais Aspectos Técnicos 
-**Principal(is) Metodologia(s) Adotada(s)**: xxxxxx<br>
-**Principais Linguagens Utilizadas e/ou Pretendidas**: xxxxxx<br>
-**Principais Tecnologias Utilizadas e/ou Pretendidas**: xxxxxx<br>
-**Principal(is) Estilo(s) Arquitetural(is) Adotado(s)**: xxxxxx<br>
-
-## O Projeto está rodando?
-( ) SIM
-( ) NÃO
-Se SIM, insira um manual (ou um script) para auxiliar ainda mais os interessados em consultar o projeto.
-
-## Informações Complementares 
-Quaisquer outras informações sobre seu projeto podem ser descritas nessa seção.
+Para rodar o frontend de forma local, basta executar o comando <code>docker-compose up -d --build</code>
