@@ -1,9 +1,21 @@
 import React from 'react';
 
-// import { Container } from './styles';
+import { Container,Inicio,Final} from './styles';
 
 function Registro() {
-  return <h1>Registro</h1>
+  return (
+  
+   <Container>
+       <Inicio>
+
+       </Inicio>
+
+       <Final>
+
+           
+       </Final>
+   </Container>
+  );
 }
 
 export default Registro;
