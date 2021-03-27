@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 import { Container,Inicio,Final,Header,Conteudo,Termos} from './styles';
 import { Form, Input } from "@rocketseat/unform";
@@ -11,14 +11,15 @@ const schema = Yup.object().shape({
     nome: Yup.string().required("O Nome é obrigatório"),
     email: Yup.string()
       .email("Insira um email válido")
-      .required("o e-mail é obrigatorio"),
+      .required("O e-mail é obrigatorio"),
     password: Yup.string().required("A senha é obrigatoria"),
-    Whatsapp: Yup.number().required("O Número do whatsapp é obrigatório"),
-    CPF: Yup.number().required("O CPF é obrigatório")
+    Whatsapp: Yup.string().required("O Número do whatsapp é obrigatório"),
+    CPF: Yup.string().required("O CPF é obrigatório")
 
 });
 
 function Registro() {
+
 
     function handleSubmit(data){
         console.log(data);
