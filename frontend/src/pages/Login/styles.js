@@ -5,7 +5,7 @@ export const Container = styled.div`
     flex-direction: column;
     background: #303047;
     max-width: 100%;
-    height: 100vh;
+    height: 100%;
 
 
     span {
