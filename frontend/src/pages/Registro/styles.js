@@ -2,9 +2,20 @@ import styled from 'styled-components';
 import { darken } from 'polished';
 
 export const Container = styled.div`
+
   display: flex;
 
   min-height: 100vh;
+
+  span {
+      font-weight: bold;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: red;
+      margin-bottom: 9px;
+    }
+
 `;
 
 
