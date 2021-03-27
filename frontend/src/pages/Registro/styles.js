@@ -2,20 +2,15 @@ import styled from 'styled-components';
 import { darken } from 'polished';
 
 export const Container = styled.div`
-
   display: flex;
 
   min-height: 100vh;
 
   span {
-      font-weight: bold;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: red;
-      margin-bottom: 9px;
-    }
-
+    color: red;
+    align-self:center;
+    font-weight:bold;
+  }
 `;
 
 
@@ -28,10 +23,11 @@ export const Inicio = styled.div`
 
 
   h2{
+    flex-wrap:wrap;
     color: #eee;
     font-size:22px;
-    margin-left:320px;
-    margin-top: 15px;
+    margin-left: 36%;
+    margin-top: 3%;
   }
    
  
@@ -41,35 +37,36 @@ export const Inicio = styled.div`
 export const Header = styled.div`
 
   display:flex;
+  flex-wrap: wrap;
   align-items: center;
-  margin:15px;
+  margin:2%;
 
   img{
-    width:50px;
-    height:50px;
+    max-width:65%;
+    max-height:65%;
   }
 
   text{
     color: #fff;
     font-size: 30px;
-    margin-left: 5px;
+    margin-left: 1%;
   }
 
   h1 {
     margin: 0 auto;
     color: #FFFF;
-    font-size: 60px;
+    font-size: 50px;
   }
 
 `
 
 export const Conteudo = styled.div`
 
-img{
-    width: 550px;
-    height:520px;
-    margin-left: 200px;
-  }
+  img{
+      max-width: 50%;
+      max-height:40%;
+      margin-left: 25%;
+    }
 
 
 `
@@ -86,6 +83,7 @@ export const Final = styled.div`
   background: #303047;
   display:flex;
   flex-direction: column;
+  flex:1;
   
   a{
     color: #eee;
@@ -132,9 +130,9 @@ export const Final = styled.div`
       border-radius: 4px;
       font-size: 16px;
       transition: background 0.3s;
-      &:hover {
-        background: ${darken(0.03, '#503E8E')};
-      }
+        &:hover {
+          background: ${darken(0.03, '#503E8E')};
+        }
     }
 
   }
@@ -147,18 +145,21 @@ export const Termos = styled.p`
   display: flex;
   align-self: center;
   justify-self:center;
-  align-content:center;
+ 
   font-size: 10px;
   color: #ccc;
 
+  a {
 
-  a{
+    margin: 0;
     font-size:10px;
-    margin: 0 10px;
-    padding:0;
-  
+    margin-left: 3px;
+    color: blueviolet;
+    font-weight:bold;
+    
   }
-  
+
+
   
 
 `
