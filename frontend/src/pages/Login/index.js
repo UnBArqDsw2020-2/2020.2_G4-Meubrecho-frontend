@@ -6,20 +6,25 @@ import Logo from '../../assets/cart.png';
 import { Form, Input } from "@rocketseat/unform";
 import { Link } from 'react-router-dom';
 import * as Yup from "yup";
+import  { signInRequest } from '../../store/modules/auth/actions';
+import { useDispatch } from 'react-redux';
 
 const schema = Yup.object().shape({
   email: Yup.string()
     .email("Insira um email válido")
     .required("O e-mail é obrigatorio"),
-  password: Yup.string().required("A senha é obrigatoria"),
+  senha: Yup.string().required("A senha é obrigatoria"),
 
 
 });
 
 function Login() {
 
-  function handleSubmit(data){
-    console.log(data);
+
+  const dispatch = useDispatch();
+
+  function handleSubmit({email,senha}){
+    dispatch(signInRequest(email, senha));
   }
 
   return (
@@ -41,7 +46,7 @@ function Login() {
           <h2> Faça seu Login</h2>
           <Input name="email" type="email" placeholder="Seu e-mail" />
           <Input
-              name="password"
+              name="senha"
               type="password"
               placeholder="Sua senha"
           /> 
