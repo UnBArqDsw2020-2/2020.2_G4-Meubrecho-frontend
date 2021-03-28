@@ -51,7 +51,7 @@ function Login() {
               placeholder="Sua senha"
           /> 
           <button type="submit">Fazer Login</button> 
-          <Texto>Não tem conta? <Link to="/">Crie uma</Link> </Texto>
+          <Texto>Não tem conta? <Link to={"/"}>Crie uma</Link> </Texto>
         </Form>
 
         

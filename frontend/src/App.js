@@ -10,8 +10,7 @@ import { PersistGate } from "redux-persist/integration/react";
 
 function App() {
   return (
-    <div className="App">
-      <>
+   
       <Provider store={store}>
         <PersistGate persistor={persistor} >
           <Router history={history}>
@@ -22,9 +21,7 @@ function App() {
         </PersistGate>
       </Provider>
 
-      
-     </>
-    </div>
+   
   );
 }
 
