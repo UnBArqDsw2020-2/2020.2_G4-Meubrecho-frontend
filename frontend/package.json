@@ -63,16 +63,16 @@
     "prettier": "2.2.1",
     "simple-git-hooks": ">=2.0.3"
   },
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged"
-    }
-  },
   "lint-staged": {
     "src/**/*.{js,jsx,json,css,md}": [
       "prettier --write",
       "eslint --fix",
       "git add"
     ]
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
   }
 }
