@@ -18,6 +18,7 @@ function Login() {
   const dispatch = useDispatch();
 
   function handleSubmit({ email, senha }) {
+
     dispatch(signInRequest(email, senha));
   }
 
