@@ -9,7 +9,7 @@ export function* signIn({ payload }) {
     const { email, senha } = payload;
     const response = yield call(api.post, 'sessions', {
       email,
-      senha,
+      senha
     });
 
     const { token, user } = response.data;
@@ -34,7 +34,7 @@ export function* signUp({ payload }) {
       whatsapp,
       email,
       cpf,
-      senha,
+      senha
     });
 
     history.push('/home');
@@ -60,5 +60,5 @@ export default all([
   takeLatest('persist/REHYDRATE', setToken),
   takeLatest('@auth/SIGN_IN_REQUEST', signIn),
   takeLatest('@auth/SIGN_UP_REQUEST', signUp),
-  takeLatest('@auth/SIGN_OUT', signOut),
+  takeLatest('@auth/SIGN_OUT', signOut)
 ]);

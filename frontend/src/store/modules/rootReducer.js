@@ -5,7 +5,7 @@ import user from './user/reducer';
 
 const reducers = combineReducers({
   auth,
-  user,
+  user
 });
 
 export default reducers;
