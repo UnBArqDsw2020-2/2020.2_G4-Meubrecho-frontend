@@ -1,0 +1,7 @@
+trailingComma: "none"
+parser: "babel"
+printWidth: 120
+tabWidth: 2
+tabs: true
+semi: true
+singleQuote: true
