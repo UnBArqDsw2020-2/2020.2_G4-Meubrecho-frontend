@@ -27,7 +27,7 @@ function Registro() {
     <Container>
       <Inicio>
         <Header>
-          <img src={Logo} alt="logo" />
+          <img src={Logo} alt='logo' />
           <text>MB</text>
           <h1>Meu Brechó</h1>
         </Header>
@@ -35,24 +35,24 @@ function Registro() {
         <h2> Compre mais e pague menos</h2>
 
         <Conteudo>
-          <img src={Foto} alt="foto" />
+          <img src={Foto} alt='foto' />
         </Conteudo>
       </Inicio>
 
       <Final>
-        <Link to="/login">Acessar</Link>
+        <Link to='/login'>Acessar</Link>
         <h2>Registra-se</h2>
 
         <Form schema={schema} onSubmit={handleSubmit}>
-          <Input name="nome" type="text" placeholder="Seu nome" />
-          <Input name="whatsapp" type="text" maxlength="11" pattern="([0-9]{11})" placeholder="Seu Whatsapp" />
-          <Input name="email" type="email" placeholder="Seu e-mail" />
-          <Input name="cpf" type="text" maxlength="11" pattern="([0-9]{11})" placeholder="Seu CPF" />
-          <Input name="senha" type="password" placeholder="Sua senha" />
-          <button type="submit">Cadastrar</button>
+          <Input name='nome' type='text' placeholder='Seu nome' />
+          <Input name='whatsapp' type='text' maxlength='11' pattern='([0-9]{11})' placeholder='Seu Whatsapp' />
+          <Input name='email' type='email' placeholder='Seu e-mail' />
+          <Input name='cpf' type='text' maxlength='11' pattern='([0-9]{11})' placeholder='Seu CPF' />
+          <Input name='senha' type='password' placeholder='Sua senha' />
+          <button type='submit'>Cadastrar</button>
         </Form>
         <Termos>
-          ao se cadastrar, você aceita os <Link to="/termos">Termos de uso</Link>
+          ao se cadastrar, você aceita os <Link to='/termos'>Termos de uso</Link>
         </Termos>
       </Final>
     </Container>

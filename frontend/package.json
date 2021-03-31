@@ -29,10 +29,10 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "lint": "eslint 'src/**/*.{js,jsx}' --fix",
-    "format": "prettier --write 'src/**/*.{js,jsx,css,scss}'",
+    "format": "prettier --write 'src/'",
     "fix": "npm run format && npm run lint",
-    "check_lint": "eslint 'src/**/*.{js,jsx}'",
-    "check_format": "prettier --check 'src/**/*.{js,jsx,css,scss}'",
+    "check_lint": "eslint 'src/'",
+    "check_format": "prettier --check 'src/'",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {

@@ -18,26 +18,25 @@ function Login() {
   const dispatch = useDispatch();
 
   function handleSubmit({ email, senha }) {
-
     dispatch(signInRequest(email, senha));
   }
 
   return (
     <Container>
       <Header>
-        <img src={Logo} alt="foto de login" />
+        <img src={Logo} alt='foto de login' />
         <h1>Meu Brechó</h1>
       </Header>
       <hr />
 
       <Content>
-        <img src={LoginFoto} alt="FotoLogin" />
+        <img src={LoginFoto} alt='FotoLogin' />
 
         <Form schema={schema} onSubmit={handleSubmit}>
           <h2> Faça seu Login</h2>
-          <Input name="email" type="email" placeholder="Seu e-mail" />
-          <Input name="senha" type="password" placeholder="Sua senha" />
-          <button type="submit">Fazer Login</button>
+          <Input name='email' type='email' placeholder='Seu e-mail' />
+          <Input name='senha' type='password' placeholder='Sua senha' />
+          <button type='submit'>Fazer Login</button>
           <Texto>
             Não tem conta? <Link to={'/'}>Crie uma</Link>{' '}
           </Texto>
