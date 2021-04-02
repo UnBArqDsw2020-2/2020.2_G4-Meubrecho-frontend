@@ -38,7 +38,7 @@ function Login() {
           <Input name='senha' type='password' placeholder='Sua senha' />
           <button type='submit'>Fazer Login</button>
           <Texto>
-            Não tem conta? <Link to={'/'}>Crie uma</Link>{' '}
+            Não tem conta? <Link to={'/register'}>Crie uma</Link>
           </Texto>
         </Form>
       </Content>
