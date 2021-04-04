@@ -34,8 +34,8 @@ function Login() {
 
         <Form schema={schema} onSubmit={handleSubmit}>
           <h2> Faça seu Login</h2>
-          <Input name='email' type='email' placeholder='Seu e-mail' />
-          <Input name='senha' type='password' placeholder='Sua senha' />
+          <Input name='email' type='email' placeholder='Email' />
+          <Input name='senha' type='password' placeholder='Senha' />
           <button type='submit'>Fazer Login</button>
           <Texto>
             Não tem conta? <Link to={'/register'}>Crie uma</Link>
