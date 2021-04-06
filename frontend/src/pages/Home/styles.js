@@ -66,5 +66,10 @@ export const useStyles = makeStyles(theme => ({
     flexGrow: 1,
     background: '#503e8e',
     padding: theme.spacing(3)
-  }
+  },
+  oi: {
+    position: 'absolute',
+    left: '50%',
+    top: '20%'
+  },
 }));

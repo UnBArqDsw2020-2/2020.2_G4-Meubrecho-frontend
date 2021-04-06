@@ -1,0 +1,46 @@
+.item {
+    min-width: 300px;
+    min-height: 260px;
+    border:  1px solid  black;
+    padding: 0 10px 14px 10px;
+}
+
+.btn-comprar {
+    height: 20%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.carrinho {
+    height: 30px;
+    width: 40px;
+}
+
+.image-product {
+    min-height: 100px;
+    min-width: 100px;
+    display: flex;
+    justify-content: center;
+}
+
+.image-product img {
+    height: 80%;
+    width: 70%;
+}
+
+.product-description {
+    display: flex;
+    flex-flow: column wrap;
+    align-items: left;
+    font-size: 26px;
+    margin-bottom: 10px;
+}
+
+.product-name {
+    
+}
+
+.product-price {
+
+}
