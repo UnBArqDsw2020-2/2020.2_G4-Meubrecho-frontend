@@ -29,7 +29,7 @@ import Loja from '../Loja';
 import Venda from '../Venda';
 import Favoritos from '../Favoritos';
 import history from '../../services/history';
-import Item from '../../components/item/item';
+import Items from '../../components/items/items';
 const optionsId = ['favoritosId', 'vendaId', 'lojaId'];
 
 const listMenu = (location, histor) => {
@@ -140,7 +140,7 @@ export default function MiniDrawer() {
               <Route exact path='/favoritos' component={() => <Favoritos />} />
               <Route exact path='/loja' component={() => <Loja />} />
             </main>
-            <div className={classes.oi}><Item /></div>
+            <div className={classes.items}><Items/></div>
           </React.Fragment>
         )}
       />
