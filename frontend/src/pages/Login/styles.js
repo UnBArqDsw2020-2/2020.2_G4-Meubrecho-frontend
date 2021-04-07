@@ -20,9 +20,11 @@ export const Container = styled.div`
 
 export const Header = styled.div`
   display: flex;
-  flex: 1;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
+  height: 20%;
+  font-size: 18px;
+
   img {
     max-width: 60%;
     max-height: 60%;
@@ -38,6 +40,8 @@ export const Content = styled.div`
   display: flex;
   flex-wrap: wrap;
   align-items: center;
+  justify-content: center;
+  height: 100%;
 
   img {
     max-width: 70%;
@@ -50,6 +54,7 @@ export const Content = styled.div`
     flex: 1;
     flex-direction: column;
     width: 100%;
+    max-width: 600px;
 
     h2 {
       align-self: center;
@@ -59,15 +64,15 @@ export const Content = styled.div`
 
     input {
       margin: 8px 15px;
-      background: rgba(0, 0, 0, 0.3);
+      background: white;
       border: 0;
       border-radius: 4px;
       height: 55px;
       padding: 15px;
-      color: #fff;
+      color: black;
 
       &::placeholder {
-        color: rgba(255, 255, 255, 0.7);
+        color: gray;
       }
     }
 
@@ -92,6 +97,6 @@ export const Texto = styled.p`
   align-self: center;
 
   a {
-    color: #eee;
+    color: #33AAFF;
   }
 `;

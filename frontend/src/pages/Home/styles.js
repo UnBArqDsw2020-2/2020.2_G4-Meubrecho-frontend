@@ -66,5 +66,9 @@ export const useStyles = makeStyles(theme => ({
     flexGrow: 1,
     background: '#503e8e',
     padding: theme.spacing(3)
-  }
+  },
+  items: {
+    width: '80%',
+    margin: '40px auto',
+  },
 }));
