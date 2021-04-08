@@ -32,6 +32,7 @@ import history from '../../services/history';
 import Pages from './pages'
 import {PAGE_FAVORITOS, PAGE_VENDA, PAGE_LOJA} from './consts'
 
+import Items from '../../components/items/items';
 const optionsId = ['favoritosId', 'vendaId', 'lojaId'];
 const drawerWidth = 240;
 
