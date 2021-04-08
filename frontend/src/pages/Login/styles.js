@@ -97,6 +97,6 @@ export const Texto = styled.p`
   align-self: center;
 
   a {
-    color: #33AAFF;
+    color: #33aaff;
   }
 `;

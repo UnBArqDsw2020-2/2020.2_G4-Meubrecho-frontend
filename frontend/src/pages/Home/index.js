@@ -29,8 +29,8 @@ import Loja from '../Loja';
 import Venda from '../Venda';
 import Favoritos from '../Favoritos';
 import history from '../../services/history';
-import Pages from './pages'
-import {PAGE_FAVORITOS, PAGE_VENDA, PAGE_LOJA} from './consts'
+import Pages from './pages';
+import { PAGE_FAVORITOS, PAGE_VENDA, PAGE_LOJA } from './consts';
 
 import Items from '../../components/items/items';
 const optionsId = ['favoritosId', 'vendaId', 'lojaId'];
@@ -129,7 +129,7 @@ const listMenu = (setPage, page) => {
           button
           onClick={() => {
             if (text !== page) {
-							setPage(text);
+              setPage(text);
             }
           }}
           selected={text === page}>
@@ -145,7 +145,7 @@ export default function Home() {
   const classes = useStyles();
   const theme = useTheme();
   const [open, setOpen] = React.useState(false);
-	const [page, setPage] = React.useState('');
+  const [page, setPage] = React.useState('');
 
   const handleDrawerOpen = () => {
     setOpen(true);
@@ -201,8 +201,8 @@ export default function Home() {
         {listMenu(setPage, page)}
       </Drawer>
       <main className={classes.content}>
-        <div className={classes.toolbar}/>
-					<Pages page={page}/>
+        <div className={classes.toolbar} />
+        <Pages page={page} />
       </main>
     </div>
   );
