@@ -1,5 +1,9 @@
 import React from 'react';
 
-export default function Favoritos() {
-  return null;
+// import { Container } from './styles';
+
+function Favoritos() {
+  return <h1> Favoritos</h1>;
 }
+
+export default Favoritos;
