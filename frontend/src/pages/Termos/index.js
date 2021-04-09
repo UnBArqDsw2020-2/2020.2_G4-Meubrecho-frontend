@@ -25,7 +25,7 @@ function Termos() {
             </Card>
             <Card>
                 <Titulo>
-                    Seção 3 - DOS SERVIÇOS OFERECIDOS
+                    SEÇÃO 3 - DOS SERVIÇOS OFERECIDOS
                 </Titulo>
                 <Texto>
                     A plataforma meubrechó não se responsabiliza por mal uso da plataforma. O Objetivo do meubrechó é conectar possiveis compradores com possiveis vendedores. Qualquer negociação de valores, transporte, reembolso, ficará por conta dos usuários finais. Além disso, não nos responsabilizamos por qualquer tipo de transação finaceira realizada entre os mesmos.
