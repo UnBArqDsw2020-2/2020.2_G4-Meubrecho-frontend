@@ -69,6 +69,6 @@ export const useStyles = makeStyles(theme => ({
   },
   items: {
     width: '80%',
-    margin: '40px auto',
-  },
+    margin: '40px auto'
+  }
 }));
