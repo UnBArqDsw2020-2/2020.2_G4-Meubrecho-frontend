@@ -1,11 +1,22 @@
 import React from 'react';
 
+import { withStyles } from '@material-ui/core/styles';
 import { FormControlLabel, FormGroup, TextField, Button, Checkbox } from '@material-ui/core';
+import purple from '@material-ui/core/colors/purple';
 import { Search as SearchIcon } from '@material-ui/icons';
 import * as Consts from './consts';
 import useSelected from './hooks';
 
 function SearchComponent() {
+  const MyCheckbox = withStyles({
+    root: {
+      color: '#303047',
+      '&$checked': {
+        color: purple[600]
+      }
+    },
+    checked: {}
+  })(props => <Checkbox color='default' {...props} />);
   const firstRow = [
     { key: Consts.CHANGE_SUPERIOR, value: 'Superior' },
     { key: Consts.CHANGE_INFERIOR, value: 'Inferior' },
@@ -99,7 +110,7 @@ function SearchComponent() {
       return (
         <FormControlLabel
           key={value.key}
-          control={<Checkbox checked={state} onChange={() => toggle(value.key)} name={value.value} color='primary' />}
+          control={<MyCheckbox checked={state} onChange={() => toggle(value.key)} name={value.value} />}
           label={value.value}
         />
       );
@@ -108,15 +119,19 @@ function SearchComponent() {
   };
 
   return (
-    <div style={{ display: 'flex', flex: 1, marginTop: '10%', marginLeft: '0%' }}>
-      <TextField type='search' variant='outlined' id='outlined-search' style={{ width: '35%' }} />
-      <Button style={{ background: 'transparent', border: 'transparent' }}>
-        <SearchIcon />
-      </Button>
-      <FormGroup column>
-        <div style={{ display: 'flex', flexDirection: 'row' }}>{renderCheckboxes(0)}</div>
-        <div style={{ display: 'flex', flexDirection: 'row' }}>{renderCheckboxes(1)}</div>
-      </FormGroup>
+    <div style={{ flexDirection: 'column', display: 'flex', flex: 1, marginTop: '10%', marginLeft: '0%' }}>
+      <div style={{ display: 'flex', flex: 1, justifyContent: 'center'}}>
+        <TextField type='search' variant='outlined' id='outlined-search' style={{ width: '35%' }} />
+        <Button style={{ background: 'transparent', border: 'transparent' }}>
+          <SearchIcon />
+        </Button>
+      </div>
+      <div style={{ display: 'flex', flex: 1, justifyContent: 'center'}}>
+        <FormGroup column>
+          <div style={{ display: 'flex', flexDirection: 'row', justifyContent: 'space-between' }}>{renderCheckboxes(0)}</div>
+          <div style={{ display: 'flex', flexDirection: 'row', justifyContent: 'space-between' }}>{renderCheckboxes(1)}</div>
+        </FormGroup>
+      </div>
     </div>
   );
 }
