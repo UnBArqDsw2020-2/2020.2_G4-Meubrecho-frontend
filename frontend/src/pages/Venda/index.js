@@ -1,5 +1,9 @@
 import React from 'react';
 
-export default function Venda() {
-  return null;
+// import { Container } from './styles';
+
+function Venda() {
+  return <h1>Venda</h1>
 }
+
+export default Venda;
