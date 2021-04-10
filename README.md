@@ -20,4 +20,5 @@ Desenvolvimento de uma Aplicação Web sobre um brechó online , com funcionalid
 Para poder rodar é necessário ter o [docker compose](https://docs.docker.com/compose/install/) assim como o [docker](https://docs.docker.com/engine/install/).
 
 Para rodar o frontend de forma local, basta executar o comando <code>docker-compose up -d --build</code>
+
 A aplicação estára acessivel em: <code> localhost:3000/login </code>
