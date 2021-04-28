@@ -7,3 +7,4 @@ singleQuote: true
 jsxSingleQuote: true
 jsxBracketSameLine: true
 arrowParens: avoid
+bracketSpacing: true
