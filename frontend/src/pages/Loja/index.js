@@ -9,7 +9,6 @@ function Loja() {
   return (
     <div style={{ display: 'flex', flexDirection: 'column', flex: 1 }}>
       <SearchComponent />
-      <Items />
     </div>
   );
 }

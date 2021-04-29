@@ -9,8 +9,7 @@ export default function Favoritos() {
   const [products, setProducts] = useState(null);
   const getFav = () => {
     let token;
-    if (document.cookie !== null || document.cookie !== undefined) token = document.cookie.split(';')[0].split('=')[1];
-    else token = null;
+    token = localStorage.getItem('authToken');
     if (products === null) {
       var myHeaders = new Headers();
       myHeaders.append('Authorization', `Bearer ${token}`);
@@ -24,12 +23,13 @@ export default function Favoritos() {
         .then(response => response.json())
         .then(products => {
           console.log(products);
-          if (products.error === undefined) setProducts(products);
+          if (products.Error === undefined) setProducts(products);
         });
     } else return products;
   };
   const renderFav = () => {
     getFav();
+    console.log('products', products);
     if (products === null) return <CircularProgress />;
     else {
       return products.map((product, index) => (
