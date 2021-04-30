@@ -24,6 +24,7 @@ export default function Favoritos() {
         .then(products => {
           console.log(products);
           if (products.Error === undefined) setProducts(products);
+          else setProducts({ error: 'Sem Protutos favoritados' });
         });
     } else return products;
   };
@@ -31,6 +32,8 @@ export default function Favoritos() {
     getFav();
     console.log('products', products);
     if (products === null) return <CircularProgress />;
+    else if (products.error !== null || products.error !== undefined)
+      return <h1 style={{ color: 'red' }}>Você não possui nenhum produto favoritado</h1>;
     else {
       return products.map((product, index) => (
         <div key={index}>
