@@ -1,7 +1,7 @@
 import { makeStyles, useTheme } from '@material-ui/core/styles';
 
 const drawerWidth = 240;
-export const useStyles = makeStyles(theme => ({
+const useStyles = makeStyles(theme => ({
   logo: {
     marginRight: '10px',
     height: '50px',
@@ -11,7 +11,7 @@ export const useStyles = makeStyles(theme => ({
     display: 'flex'
   },
   appBar: {
-    background: '#503e8e',
+    background: '#303047',
     zIndex: theme.zIndex.drawer + 1,
     transition: theme.transitions.create(['width', 'margin'], {
       easing: theme.transitions.easing.sharp,
@@ -56,19 +56,15 @@ export const useStyles = makeStyles(theme => ({
     }
   },
   toolbar: {
+    display: 'flex',
     alignItems: 'center',
     justifyContent: 'flex-end',
     padding: theme.spacing(0, 1),
-    // necessary for content to be below app bar
     ...theme.mixins.toolbar
   },
   content: {
     flexGrow: 1,
-    background: '#503e8e',
     padding: theme.spacing(3)
-  },
-  items: {
-    width: '80%',
-    margin: '40px auto'
   }
 }));
+export default useStyles;
