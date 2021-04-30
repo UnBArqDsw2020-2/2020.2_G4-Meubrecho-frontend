@@ -28,7 +28,32 @@ function listaProdutos() {
         });
     } else return products;
   };
+
   getProducts();
+
+  function onClickFavorite(productId) {
+    console.log('clickId', productId);
+    let token = localStorage.getItem('authToken');
+    let userId = localStorage.getItem('userId');
+    var myHeaders = new Headers();
+    myHeaders.append('Authorization', `Bearer ${token}`);
+
+    var myInit = {
+      method: 'POST',
+      headers: myHeaders,
+      body: {
+        userId: userId
+      }
+    };
+    const request = new Request(`http://localhost:3333/product/favorite/${productId}`, myInit);
+    fetch(request)
+      .then(response => response.json())
+      .then(jsonResponse => {
+        console.log('josn', jsonResponse.error);
+        if (jsonResponse.Error !== undefined) alert(jsonResponse.Error);
+        else alert('O produto foi adicionado aos favoritos');
+      });
+  }
   const renderProducts = () => {
     console.log('products', products);
     if (products === null) return <CircularProgress />;
@@ -38,11 +63,14 @@ function listaProdutos() {
       return products.map((product, index) => (
         <div key={index}>
           <Item
+            productId={product._id}
             name={product.nome}
             image={product.imagem}
             description={product.descricao}
             price={product.preco}
             tag=''
+            buttonConfig={{ icon: 'add', text: 'Adicionar aos favoritos', onClickFavorite }}
+            onClick={id => onClickFavorite(id)}
           />
         </div>
       ));
