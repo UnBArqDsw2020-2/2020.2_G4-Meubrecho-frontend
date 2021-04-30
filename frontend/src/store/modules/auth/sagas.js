@@ -16,6 +16,7 @@ export function* signIn({ payload }) {
 
     api.defaults.headers.Authorization = `Baerer ${token}`;
     localStorage.setItem('authToken', token);
+    localStorage.setItem('userId', user.id);
 
     yield put(signInSuccess(token, user));
 
