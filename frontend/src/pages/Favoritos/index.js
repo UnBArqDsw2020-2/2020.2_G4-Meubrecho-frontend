@@ -1,7 +1,5 @@
 import React, { useState } from 'react';
-import { takeLatest, call, put, all } from 'redux-saga/effects';
 import CircularProgress from '@material-ui/core/CircularProgress';
-import api from '../../services/api';
 
 import Item from '../../components/item/item';
 

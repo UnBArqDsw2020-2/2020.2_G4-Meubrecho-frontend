@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import CircularProgress from '@material-ui/core/CircularProgress';
 
-import Item from '../../components/item/item'
+import Item from '../../components/item/item';
 
 function listaProdutos() {
   const [products, setProducts] = useState(null);
@@ -52,4 +52,3 @@ function listaProdutos() {
 }
 
 export default listaProdutos;
-

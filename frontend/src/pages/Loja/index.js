@@ -4,13 +4,13 @@ import { FormControlLabel, FormGroup, TextField, Button, Checkbox } from '@mater
 import Items from '../../components/items/items';
 
 import SearchComponent from './search';
-import ProductsList from './productsList'
+import ProductsList from './productsList';
 
 function Loja() {
   return (
     <div style={{ display: 'flex', flexDirection: 'column', flex: 1 }}>
       <SearchComponent />
-			<ProductsList />
+      <ProductsList />
     </div>
   );
 }
