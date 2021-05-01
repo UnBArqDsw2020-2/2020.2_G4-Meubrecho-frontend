@@ -4,8 +4,15 @@ import './style.css';
 
 function AddItem() {
   return (
-    <div>
-
+    <div className='item1'>
+    	<div>
+    		<div className='addPhoto'>
+    			add photo
+    		</div>
+    		<div className='addProductInformation'>
+    			addProductInformation
+    		</div>
+    	</div>
     </div>
   );
 }

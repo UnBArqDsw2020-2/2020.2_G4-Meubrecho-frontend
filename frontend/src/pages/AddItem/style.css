@@ -1,0 +1,19 @@
+.item1 {
+    width: 300px;
+    height: 340px;
+    border:  1px solid  black;
+    padding: 0 10px 14px 10px;
+    margin: 20px 40px;
+}
+
+.addPhoto {
+    border:  1px solid  black;
+    padding: 0 10px 14px 10px;
+    margin: 20px 40px;
+}
+
+.addProductInformation {
+    border:  1px solid  black;
+    padding: 0 10px 14px 10px;
+    margin: 20px 40px;
+}
