@@ -1,0 +1,7 @@
+.form-input {
+	display: flex;
+	flex-direction: column;
+	align-content: space-between;
+	justify-content: space-between;
+	height: 200px;
+}
