@@ -25,8 +25,8 @@ class DisplayImage extends Component {
       <div>
         <div>
           <div>
-            <img src={this.state.image} />
             <h1>Adicione uma foto do produto</h1>
+            <img src={this.state.image} />
             <input type="file" name="myImage" onChange={this.onImageChange} />
           </div>
         </div>
