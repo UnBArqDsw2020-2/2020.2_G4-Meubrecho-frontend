@@ -19,15 +19,14 @@ export default function Favoritos() {
       const request = new Request('http://localhost:3333/productfavorited', myInit);
       return fetch(request)
         .then(response => response.json())
-        .then(products => {
-          console.log(products);
-          if (products.Error === undefined) setProducts(products);
+        .then(jsonResponse => {
+          console.log(jsonResponse);
+          if (jsonResponse.arrayProduct.length !== 0) setProducts(jsonResponse.arrayProduct);
           else setProducts({ error: 'Sem Protutos favoritados' });
         });
     } else return products;
   };
-	function onClickRemove () {
-	}
+  function onClickRemove() {}
   const renderFav = () => {
     getFav();
     console.log('products', products);
