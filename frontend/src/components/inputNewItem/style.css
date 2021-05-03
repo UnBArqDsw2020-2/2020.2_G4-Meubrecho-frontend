@@ -1,0 +1,16 @@
+.form-input {
+	display: flex;
+	flex-direction: column;
+	align-content: space-between;
+	justify-content: space-between;
+	height: 300px;
+}
+
+.form-input input {
+	height: 40px;
+}
+
+.form-input select {
+	height: 40px;
+	width: 100%;
+}

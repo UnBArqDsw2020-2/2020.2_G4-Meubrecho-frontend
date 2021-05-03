@@ -22,18 +22,19 @@ import {
   Storefront as StorefrontIcon,
   ChevronRight as ChevronRightIcon,
   Menu as MenuIcon,
-  ChevronLeft as ChevronLeftIcon
+  ChevronLeft as ChevronLeftIcon,
+  Add as AddIcon
 } from '@material-ui/icons';
 
 import Pages from './pages';
-import { PAGE_FAVORITOS, PAGE_VENDA, PAGE_LOJA } from './consts';
+import { PAGE_FAVORITOS, PAGE_VENDA, PAGE_LOJA, PAGE_ADD_ITEM } from './consts';
 import useStyles from './styles';
 
-const optionsId = ['favoritosId', 'vendaId', 'lojaId'];
+const optionsId = ['favoritosId', 'vendaId', 'lojaId', 'addId'];
 const drawerWidth = 240;
 
 const listMenu = (setPage, page) => {
-  const list = [PAGE_FAVORITOS, PAGE_VENDA, PAGE_LOJA].map((text, index) => {
+  const list = [PAGE_FAVORITOS, PAGE_VENDA, PAGE_LOJA, PAGE_ADD_ITEM].map((text, index) => {
     let name;
     let icon;
     switch (optionsId[index]) {
@@ -48,6 +49,10 @@ const listMenu = (setPage, page) => {
       case 'lojaId':
         name = 'Loja';
         icon = <StorefrontIcon />;
+        break;
+      case 'addId':
+        name = 'Adicionar Produto';
+        icon = <AddIcon />;
         break;
       default:
         name = '';
