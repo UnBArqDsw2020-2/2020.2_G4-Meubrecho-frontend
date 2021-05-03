@@ -121,7 +121,7 @@ const listMenu = (setPage, page) => {
         icon = <StorefrontIcon />;
         break;
       case 'addId':
-        name = 'AddItem';
+        name = 'Adicionar Produto';
         icon = <AddIcon />;
         break;
       default:
