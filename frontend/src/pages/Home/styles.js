@@ -2,6 +2,12 @@ import { makeStyles, useTheme } from '@material-ui/core/styles';
 
 const drawerWidth = 240;
 const useStyles = makeStyles(theme => ({
+	logoutButton: {
+		position: 'absolute',
+		right: '0',
+		marginRight: '20px',
+		color: '#FFF'
+	},
   logo: {
     marginRight: '10px',
     height: '50px',

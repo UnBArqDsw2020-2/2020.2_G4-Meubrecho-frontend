@@ -1,9 +1,10 @@
 import React from 'react';
 import clsx from 'clsx';
-import { Router, Route } from 'react-router-dom';
+import { Router, Route, Redirect } from 'react-router-dom';
 import Logo from '../../assets/cart.png';
 import { makeStyles, useTheme } from '@material-ui/core/styles';
 import {
+	Button,
   List,
   ListItemText,
   ListItemIcon,
@@ -76,6 +77,13 @@ const listMenu = (setPage, page) => {
   });
   return list;
 };
+
+function logout() {
+	console.log('logut')
+	localStorage.clear();
+	location.href='/'
+}
+
 export default function Home() {
   const classes = useStyles();
   const theme = useTheme();
@@ -113,6 +121,7 @@ export default function Home() {
           <Typography variant='h6' noWrap>
             Meu brechó
           </Typography>
+				<Button onClick={() => logout()}className={classes.logoutButton}>Logout</Button>
         </Toolbar>
       </AppBar>
       <Drawer
