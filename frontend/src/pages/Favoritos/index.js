@@ -34,7 +34,7 @@ export default function Favoritos() {
     else if (products.error !== null && products.error !== undefined)
       return <h1 style={{ color: 'red' }}>Você não possui nenhum produto favoritado</h1>;
     else {
-      return products.arrayProduct.map((product, index) => (
+      return products.map((product, index) => (
         <div key={index}>
           <Item
             name={product.nome}
