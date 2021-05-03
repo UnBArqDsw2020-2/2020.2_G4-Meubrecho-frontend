@@ -1,22 +1,23 @@
 import React from 'react';
 import './item.css';
 import Camisa from '../../assets/plain-tshirt.jpg';
-import Carrinho from '../../assets/carrinho.svg';
+import { Stars as StarsIcon } from '@material-ui/icons';
+import { Button } from '@material-ui/core';
 
-const Item = () => {
+const Item = (name, image, description, price, tag) => {
   return (
     <div className='item'>
       <div className='image-product'>
         <img src={Camisa} />
       </div>
       <div className='product-description'>
-        <div className='product-name'>Camisa manga curta</div>
-        <div className='product-price'>R$ 30,00</div>
+        <div className='product-name'>{name}</div>
+        <div className='product-price'>{price}</div>
       </div>
-      <button className='btn-comprar'>
-        <img className='carrinho' src={Carrinho} />
-        <div>Adicionar ao carrinho</div>
-      </button>
+      <Button className='btn-comprar'>
+        <StarsIcon className='carrinho' />
+        <div>Adicionar aos favoritos</div>
+      </Button>
     </div>
   );
 };
