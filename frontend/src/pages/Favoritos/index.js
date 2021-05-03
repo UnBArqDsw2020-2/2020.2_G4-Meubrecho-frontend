@@ -1,7 +1,5 @@
 import React, { useState } from 'react';
-import { takeLatest, call, put, all } from 'redux-saga/effects';
 import CircularProgress from '@material-ui/core/CircularProgress';
-import api from '../../services/api';
 
 import Item from '../../components/item/item';
 
@@ -28,21 +26,24 @@ export default function Favoritos() {
         });
     } else return products;
   };
+	function onClickRemove () {
+	}
   const renderFav = () => {
     getFav();
     console.log('products', products);
     if (products === null) return <CircularProgress />;
-    else if (products.error !== null || products.error !== undefined)
+    else if (products.error !== null && products.error !== undefined)
       return <h1 style={{ color: 'red' }}>Você não possui nenhum produto favoritado</h1>;
     else {
-      return products.map((product, index) => (
+      return products.arrayProduct.map((product, index) => (
         <div key={index}>
           <Item
-            name={product.name}
-            image={product.image}
-            description={product.description}
-            price={product.price}
+            name={product.nome}
+            image={product.imagem}
+            description={product.descricao}
+            price={product.preco}
             tag={product.tag}
+            buttonConfig={{ icon: 'rm', text: 'Remover dos favoritos', onClickRemove }}
           />
         </div>
       ));
