@@ -1,9 +1,10 @@
 import React, { useState } from 'react';
 import CircularProgress from '@material-ui/core/CircularProgress';
+import PropTypes from 'prop-types';
 
 import Item from '../../components/item/item';
 
-function listaProdutos() {
+function listaProdutos({ filters, name }) {
   const [products, setProducts] = useState([]);
   const getProducts = () => {
     let token;
@@ -63,25 +64,55 @@ function listaProdutos() {
         else alert('O produto foi adicionado aos favoritos');
       });
   }
+  function validateTags(tags) {
+    if (filters.length > 0)
+      for (let filterElement of filters)
+        for (let tagsElement of tags)
+          if (filterElement === tagsElement) {
+            return 1;
+          }
+    if (filters.length == 0) return 1;
+    return 0;
+  }
   const renderProducts = () => {
     if (products === null) return <CircularProgress />;
     else if (products.error !== null && products.error !== undefined)
       return <h1 style={{ color: 'red' }}>A loja não tem nenhum produto no momento</h1>;
     else {
-      return products.map((product, index) => (
-        <div key={index}>
-          <Item
-            productId={product._id}
-            name={product.nome}
-            image={product.imagem}
-            description={product.descricao}
-            price={product.preco}
-            tag=''
-            buttonConfig={{ icon: 'add', text: 'Adicionar aos favoritos', onClickFavorite }}
-            onClick={id => onClickFavorite(id)}
-          />
-        </div>
-      ));
+      return products.map((product, index) => {
+        if (validateTags(product.tag)) {
+          if (name.length !== 0 && product.nome.includes(name))
+            return (
+              <div key={index}>
+                <Item
+                  productId={product._id}
+                  name={product.nome}
+                  image={product.imagem}
+                  description={product.descricao}
+                  price={product.preco}
+                  tag=''
+                  buttonConfig={{ icon: 'add', text: 'Adicionar aos favoritos', onClickFavorite }}
+                  onClick={id => onClickFavorite(id)}
+                />
+              </div>
+            );
+          else if (name.length === 0)
+            return (
+              <div key={index}>
+                <Item
+                  productId={product._id}
+                  name={product.nome}
+                  image={product.imagem}
+                  description={product.descricao}
+                  price={product.preco}
+                  tag=''
+                  buttonConfig={{ icon: 'add', text: 'Adicionar aos favoritos', onClickFavorite }}
+                  onClick={id => onClickFavorite(id)}
+                />
+              </div>
+            );
+        }
+      });
     }
   };
   return (
@@ -90,5 +121,9 @@ function listaProdutos() {
     </div>
   );
 }
+listaProdutos.propTypes = {
+  filters: PropTypes.array.isRequired,
+  name: PropTypes.string.isRequired
+};
 
 export default listaProdutos;

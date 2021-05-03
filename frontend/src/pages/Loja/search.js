@@ -1,5 +1,6 @@
 import React from 'react';
 
+import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/core/styles';
 import { FormControlLabel, FormGroup, TextField, Button, Checkbox } from '@material-ui/core';
 import purple from '@material-ui/core/colors/purple';
@@ -7,7 +8,7 @@ import { Search as SearchIcon } from '@material-ui/icons';
 import * as Consts from './consts';
 import useSelected from './hooks';
 
-function SearchComponent() {
+function SearchComponent({ filters, setFilters, handleChangeText }) {
   const MyCheckbox = withStyles({
     root: {
       color: '#303047',
@@ -20,9 +21,9 @@ function SearchComponent() {
   const firstRow = [
     { key: Consts.CHANGE_SUPERIOR, value: 'Superior' },
     { key: Consts.CHANGE_INFERIOR, value: 'Inferior' },
-    { key: Consts.CHANGE_CAMISA, value: 'Camisa' },
-    { key: Consts.CHANGE_CAMISETA, value: 'Camiseta' },
-    { key: Consts.CHANGE_AGASALHO, value: 'Agasalho' },
+    { key: Consts.CHANGE_CAMISA, value: 'Camisas' },
+    { key: Consts.CHANGE_CAMISETA, value: 'Camisetas' },
+    { key: Consts.CHANGE_AGASALHO, value: 'Agasalhos' },
     { key: Consts.CHANGE_CALCA, value: 'Calça' },
     { key: Consts.CHANGE_SHORT, value: 'Short' }
   ];
@@ -35,7 +36,6 @@ function SearchComponent() {
     { key: Consts.CHANGE_BONE, value: 'Bone' },
     { key: Consts.CHANGE_CHAPEU, value: 'Chapeu' }
   ];
-
   const {
     chapeu,
     bone,
@@ -56,9 +56,7 @@ function SearchComponent() {
   } = useSelected();
 
   const renderCheckboxes = row => {
-    console.log(firstRow);
     const rowList = 0 === row ? firstRow : seccondRow;
-    console.log('rowList', rowList);
     const fields = rowList.map((value, index) => {
       var state;
       switch (value.key) {
@@ -110,7 +108,21 @@ function SearchComponent() {
       return (
         <FormControlLabel
           key={value.key}
-          control={<MyCheckbox checked={state} onChange={() => toggle(value.key)} name={value.value} />}
+          control={
+            <MyCheckbox
+              checked={state}
+              onChange={() => {
+                console.log('searchFilters', filters);
+                if (state) {
+                  var index = filters.indexOf(value.value);
+                  filters.splice(index, 1);
+                  setFilters(filters.splice(index, 1));
+                } else setFilters([...filters, value.value]);
+                toggle(value.key);
+              }}
+              name={value.value}
+            />
+          }
           label={value.value}
         />
       );
@@ -121,7 +133,13 @@ function SearchComponent() {
   return (
     <div style={{ flexDirection: 'column', display: 'flex', flex: 1, marginTop: '10%', marginLeft: '0%' }}>
       <div style={{ display: 'flex', flex: 1, justifyContent: 'center' }}>
-        <TextField type='search' variant='outlined' id='outlined-search' style={{ width: '35%' }} />
+        <TextField
+          onChange={payload => handleChangeText(payload.target.value)}
+          type='search'
+          variant='outlined'
+          id='outlined-search'
+          style={{ width: '35%' }}
+        />
         <Button style={{ background: 'transparent', border: 'transparent' }}>
           <SearchIcon />
         </Button>
@@ -140,4 +158,9 @@ function SearchComponent() {
   );
 }
 
+SearchComponent.propTypes = {
+  setFilters: PropTypes.func.isRequired,
+  filters: PropTypes.array.isRequired,
+  handleChangeText: PropTypes.func.isRequired
+};
 export default SearchComponent;
