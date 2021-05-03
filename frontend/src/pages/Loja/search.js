@@ -120,16 +120,20 @@ function SearchComponent() {
 
   return (
     <div style={{ flexDirection: 'column', display: 'flex', flex: 1, marginTop: '10%', marginLeft: '0%' }}>
-      <div style={{ display: 'flex', flex: 1, justifyContent: 'center'}}>
+      <div style={{ display: 'flex', flex: 1, justifyContent: 'center' }}>
         <TextField type='search' variant='outlined' id='outlined-search' style={{ width: '35%' }} />
         <Button style={{ background: 'transparent', border: 'transparent' }}>
           <SearchIcon />
         </Button>
       </div>
-      <div style={{ display: 'flex', flex: 1, justifyContent: 'center'}}>
+      <div style={{ display: 'flex', flex: 1, justifyContent: 'center' }}>
         <FormGroup column>
-          <div style={{ display: 'flex', flexDirection: 'row', justifyContent: 'space-between' }}>{renderCheckboxes(0)}</div>
-          <div style={{ display: 'flex', flexDirection: 'row', justifyContent: 'space-between' }}>{renderCheckboxes(1)}</div>
+          <div style={{ display: 'flex', flexDirection: 'row', justifyContent: 'space-between' }}>
+            {renderCheckboxes(0)}
+          </div>
+          <div style={{ display: 'flex', flexDirection: 'row', justifyContent: 'space-between' }}>
+            {renderCheckboxes(1)}
+          </div>
         </FormGroup>
       </div>
     </div>
