@@ -26,8 +26,7 @@ export default function Favoritos() {
         });
     } else return products;
   };
-	function onClickRemove () {
-	}
+  function onClickRemove() {}
   const renderFav = () => {
     getFav();
     console.log('products', products);

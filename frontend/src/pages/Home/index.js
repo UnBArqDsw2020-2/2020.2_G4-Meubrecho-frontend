@@ -4,7 +4,7 @@ import { Router, Route, Redirect } from 'react-router-dom';
 import Logo from '../../assets/cart.png';
 import { makeStyles, useTheme } from '@material-ui/core/styles';
 import {
-	Button,
+  Button,
   List,
   ListItemText,
   ListItemIcon,
@@ -79,9 +79,9 @@ const listMenu = (setPage, page) => {
 };
 
 function logout() {
-	console.log('logut')
-	localStorage.clear();
-	location.href='/'
+  console.log('logut');
+  localStorage.clear();
+  location.href = '/';
 }
 
 export default function Home() {
@@ -121,7 +121,9 @@ export default function Home() {
           <Typography variant='h6' noWrap>
             Meu brechó
           </Typography>
-				<Button onClick={() => logout()}className={classes.logoutButton}>Logout</Button>
+          <Button onClick={() => logout()} className={classes.logoutButton}>
+            Logout
+          </Button>
         </Toolbar>
       </AppBar>
       <Drawer

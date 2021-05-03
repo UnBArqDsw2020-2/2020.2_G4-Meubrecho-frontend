@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, { useState } from 'react';
 import CircularProgress from '@material-ui/core/CircularProgress';
 
 import Item from '../../components/item/item';
@@ -58,9 +58,9 @@ function Venda() {
       .then(jsonResponse => {
         if (jsonResponse.Error !== undefined) alert(jsonResponse.Error);
         else {
-					getProducts();
-					alert('Produto removido da loja');
-				}
+          getProducts();
+          alert('Produto removido da loja');
+        }
       });
   }
   getProducts();
