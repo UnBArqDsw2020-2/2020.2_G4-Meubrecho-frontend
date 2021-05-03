@@ -19,12 +19,22 @@ function listaProdutos() {
       };
       const request = new Request('http://localhost:3333/product', myInit);
       return fetch(request)
-        .then(response => response.json())
+        .then(response => {
+          if (response.status == 401) {
+            localStorage.clear();
+            location.href = '/';
+            throw 'permission error';
+          }
+          return response.json();
+        })
         .then(jsonResponse => {
           console.log('api', jsonResponse);
-          if (jsonResponse.Error === undefined) setProducts(jsonResponse);
+          if (jsonResponse.length !== 0) setProducts(jsonResponse);
           else setProducts({ error: 'Sem Protutos na loja' });
           return products;
+        })
+        .catch(e => {
+          console.log(e);
         });
     } else return products;
   };
@@ -49,13 +59,11 @@ function listaProdutos() {
     fetch(request)
       .then(response => response.json())
       .then(jsonResponse => {
-        console.log('josn', jsonResponse.error);
         if (jsonResponse.Error !== undefined) alert(jsonResponse.Error);
         else alert('O produto foi adicionado aos favoritos');
       });
   }
   const renderProducts = () => {
-    console.log('products', products);
     if (products === null) return <CircularProgress />;
     else if (products.error !== null && products.error !== undefined)
       return <h1 style={{ color: 'red' }}>A loja não tem nenhum produto no momento</h1>;
