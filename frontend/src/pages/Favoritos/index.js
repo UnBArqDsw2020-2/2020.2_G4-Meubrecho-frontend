@@ -26,15 +26,15 @@ export default function Favoritos() {
         });
     } else return products;
   };
+  function onClickView() {}
   function onClickRemove() {}
   const renderFav = () => {
     getFav();
-    console.log('products', products);
     if (products === null) return <CircularProgress />;
     else if (products.error !== null && products.error !== undefined)
       return <h1 style={{ color: 'red' }}>Você não possui nenhum produto favoritado</h1>;
     else {
-      return products.arrayProduct.map((product, index) => (
+      return products.map((product, index) => (
         <div key={index}>
           <Item
             name={product.nome}
@@ -42,7 +42,8 @@ export default function Favoritos() {
             description={product.descricao}
             price={product.preco}
             tag={product.tag}
-            buttonConfig={{ icon: 'rm', text: 'Remover dos favoritos', onClickRemove }}
+            buttonConfig={{ icon: 'rm', text: 'Remover dos favoritos' }}
+            onClick={() => onClickRemove}
           />
         </div>
       ));
