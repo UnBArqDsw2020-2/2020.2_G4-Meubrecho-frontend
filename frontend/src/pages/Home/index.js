@@ -1,5 +1,6 @@
 import React from 'react';
 import clsx from 'clsx';
+import history from '../../services/history';
 import { Router, Route, Redirect } from 'react-router-dom';
 import Logo from '../../assets/cart.png';
 import { makeStyles, useTheme } from '@material-ui/core/styles';
@@ -81,7 +82,7 @@ const listMenu = (setPage, page) => {
 function logout() {
   console.log('logut');
   localStorage.clear();
-  location.href = '/';
+	history.push('/')
 }
 
 export default function Home() {
