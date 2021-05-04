@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import history from '../../../services/history';
+import history from '../../services/history';
 import CircularProgress from '@material-ui/core/CircularProgress';
 
 import Item from '../../components/item/item';
