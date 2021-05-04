@@ -24,7 +24,6 @@ function Venda() {
           if (response.status == 401) {
             localStorage.clear();
             history.push('/');
-            location.href = '/';
             throw 'permission error';
           }
           return response.json();
