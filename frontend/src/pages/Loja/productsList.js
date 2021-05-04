@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import CircularProgress from '@material-ui/core/CircularProgress';
+import history from '../../services/history';
 import PropTypes from 'prop-types';
 
 import Item from '../../components/item/item';
@@ -23,7 +24,7 @@ function ListaProdutos({ filters, name }) {
         .then(response => {
           if (response.status == 401) {
             localStorage.clear();
-            location.href = '/';
+            history.push('/');
             throw 'permission error';
           }
           return response.json();
