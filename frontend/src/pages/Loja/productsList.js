@@ -5,7 +5,7 @@ import PropTypes from 'prop-types';
 import Item from '../../components/item/item';
 
 function listaProdutos({ filters, name }) {
-  const [products, setProducts] = useState([]);
+  const [products, setProducts] = useState(null);
   const getProducts = () => {
     let token;
     token = localStorage.getItem('authToken');
