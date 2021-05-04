@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 
 import Item from '../../components/item/item';
 
-function listaProdutos({ filters, name }) {
+function ListaProdutos({ filters, name }) {
   const [products, setProducts] = useState(null);
   const getProducts = () => {
     let token;
@@ -121,9 +121,9 @@ function listaProdutos({ filters, name }) {
     </div>
   );
 }
-listaProdutos.propTypes = {
+ListaProdutos.propTypes = {
   filters: PropTypes.array.isRequired,
   name: PropTypes.string.isRequired
 };
 
-export default listaProdutos;
+export default ListaProdutos;
